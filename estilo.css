@@ -299,21 +299,30 @@ section {
 
 .equipes a {
     text-decoration: none;
-    color: var(--roxo-escuro);
-    padding: 8px 15px;
-    font-size: 14px;
-    font-weight: bold;
     display: inline-block;    /* Permite padding e margin */
-    margin-top: 10px;
-    border-radius: 5px;
-    transition: color 0.3s ease, background-color 0.3s ease;
+    background-color: var(--roxo-escuro);
+    color: #FFFFFF;
+    height: 50px;
+    padding: 0 30px;    /* Padding ajustado para flexibilidade de largura */
+    border: none;
+    border-radius: 25px;    /* Bordas mais arredondadas */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;    /* Transições suaves */
+    box-shadow: 0 4px 8px var(--sombra-leve);
+    margin-top: 20px;    /* Espaçamento acima dos botões */
+    text-align: center;
 }
+
+
+
 
 .equipes a:hover {
-    color: white;
-    background-color: var(--vermelho-vibrante);
+    background-color: var(--vermelho-vibrante);    /* Nova cor de hover para botões */
+    transform: translateY(-3px);    /* Efeito de levantar mais pronunciado */
+    box-shadow: 0 6px 12px var(--sombra-media);
 }
-
 .equipes .fa-brands {
     /* Estiliza os ícones das redes sociais */
     font-size: 24px;
