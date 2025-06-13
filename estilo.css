@@ -1,0 +1,635 @@
+:root {
+    --roxo-escuro: #372073;
+    --verde-petroleo: #0E7C7B;
+    --verde-claro: #17BEBB;
+    --verde-pastel: #D8F5F1;
+    --vermelho-vibrante: #D62246;
+    --cinza-claro: #f0f0f0;    /* Para seções de fundo mais neutras */
+    --sombra-leve: rgba(0, 0, 0, 0.1);
+    --sombra-media: rgba(0, 0, 0, 0.2);
+
+    --font-title: 'Poppins', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+/* Reset básico para melhor controle de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    /* Garante que padding e borda não aumentem o tamanho do elemento */
+}
+
+html {
+    scroll-behavior: smooth;    /* Rolagem suave para os links de âncora */
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    background-color: var(--verde-pastel);
+    width: 90%;    /* Ajustado para 90% para dar um respiro nas laterais em telas maiores */
+    max-width: 1200px;    /* Define uma largura máxima para o conteúdo não esticar demais */
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-body);
+    color: #333;    /* Cor de texto padrão para melhor legibilidade */
+    box-shadow: 0 0 20px var(--sombra-media);    /* Sombra sutil para destacar a página */
+}
+
+/* Estilos de Tipografia */
+h1,h2,h3,h4,h5,h6 {
+    font-family: var(--font-title);
+    color: var(--roxo-escuro);    /* Cor padrão para títulos */
+    margin-bottom: 15px;    /* Espaçamento abaixo dos títulos */
+}
+
+p,span,a,li {
+    font-family: var(--font-body);
+    line-height: 1.6;    /* Melhorar a legibilidade do texto */
+}
+
+/* Header (Cabeçalho) */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--roxo-escuro);
+    height: 100px;    /* Altura ajustada para um visual mais compacto */
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;    /* Espaçamento interno nas laterais */
+    box-shadow: 0 2px 10px var(--sombra-media);    /* Sombra para destacar o cabeçalho */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 180px;    /* Tamanho do logo ajustado */
+    height: auto;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;    /* Espaçamento ajustado */
+    font-size: 18px;    /* Tamanho da fonte ajustado */
+    font-weight: 500;    /* Levemente mais negrito */
+    transition: color 0.3s ease, transform 0.3s ease;    /* Transição suave para hover */
+}
+
+nav a:hover {
+    color: var(--verde-claro);    /* Cor de hover da paleta */
+    transform: translateY(-2px);    /* Efeito sutil de levantar */
+}
+
+/* Botões Globais */
+button {
+    background-color: var(--roxo-escuro);
+    color: #FFFFFF;
+    height: 50px;
+    padding: 0 30px;    /* Padding ajustado para flexibilidade de largura */
+    border: none;
+    border-radius: 25px;    /* Bordas mais arredondadas */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;    /* Transições suaves */
+    box-shadow: 0 4px 8px var(--sombra-leve);
+    margin-top: 20px;    /* Espaçamento acima dos botões */
+}
+
+button:hover {
+    background-color: var(--vermelho-vibrante);    /* Nova cor de hover para botões */
+    transform: translateY(-3px);    /* Efeito de levantar mais pronunciado */
+    box-shadow: 0 6px 12px var(--sombra-media);
+}
+
+/* Seção Início (Topo) */
+.topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 40px;    /* Padding interno da seção */
+    background: linear-gradient(to right, var(--roxo-escuro), var(--vermelho-vibrante));    /* Gradiente de cor */
+    color: white;
+    text-align: left;
+    border-radius: 0 0 20px 20px;    /* Bordas arredondadas na parte inferior */
+    box-shadow: 0 5px 15px var(--sombra-media);
+}
+
+.topo a {
+    text-decoration: none;
+    color: var(--verde-claro);
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;    /* Permite padding e margin */
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+
+
+.topo-texto {
+    flex: 1;    /* Permite que o texto ocupe o espaço disponível */
+    padding-right: 40px;    /* Espaçamento entre texto e imagem */
+}
+
+.topo-texto h1 {
+    font-size: 3.2em;
+    /* Tamanho maior para o título principal */
+    margin-bottom: 20px;
+    color: white;    /* Cor do título na seção topo */
+    text-shadow: 2px 2px 4px var(--sombra-media);
+}
+
+.topo-texto p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.topo-imagem {
+    flex-shrink: 0;    /* Impede que a imagem encolha */
+}
+
+.topo-imagem img {
+    max-width: 450px;    /* Tamanho máximo da imagem no topo */
+    height: auto;
+    border-radius: 15px;    /* Bordas arredondadas para a imagem */
+    box-shadow: 0 8px 16px var(--sombra-media);
+}
+
+/* Seções Gerais */
+section {
+    padding: 60px 40px;    /* Padding consistente para todas as seções */
+    margin-bottom: 30px;    /* Espaçamento entre as seções */
+    background-color: white;    /* Fundo branco padrão para seções */
+    border-radius: 10px;    /* Bordas arredondadas para as seções */
+    box-shadow: 0 4px 10px var(--sombra-leve);    /* Sombra para destacar as seções */
+}
+
+/* Seção Sobre */
+.sobre {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--cinza-claro);    /* Fundo cinza claro para a seção sobre */
+}
+
+.sobre-conteudo {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.sobre h2 {
+    font-size: 2.5em;
+    color: var(--verde-petroleo);    /* Cor do título para a seção sobre */
+}
+
+.sobre-conteudo p {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.sobre img {
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px var(--sombra-media);
+}
+
+/* Seções de Cards (Oficinas e Equipe) - Reorganizado para melhor reutilização */
+.oficina-topo,.equipe-topo,.fale-conosco-topo {
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    margin-top: 30px;
+    background-color: var(--roxo-escuro);
+    color: #FFFFFF;
+    border-radius: 16px 16px 0px 0px;
+    box-shadow: 0 5px 15px var(--sombra-media);
+    text-align: center;
+}
+
+.oficina-topo h2,.equipe-topo h2,.fale-conosco-topo h2 {
+    color: white;
+    font-size: 2.8em;
+    margin-bottom: 10px;
+}
+
+/* Contêiner dos cards */
+.oficinas-cards,.equipe-cards {
+    display: flex;
+    flex-wrap: wrap;    /* Permite que os cards quebrem linha */
+    justify-content: center;    /* Centraliza os cards */
+    gap: 30px;    /* Espaçamento entre os cards */
+    padding: 40px;
+    background-color: white;
+    border-radius: 0px 0px 16px 16px;
+    border-bottom: 5px solid var(--verde-pastel);    /* Cor da borda inferior */
+    border-left: 5px solid var(--verde-pastel);
+    border-right: 5px solid var(--verde-pastel);
+    box-shadow: 0 4px 10px var(--sombra-leve);
+    margin-bottom: 30px;
+}
+
+/* Estilo para cada card individual (Oficina e Equipe) */
+.oficina,.equipes {
+    border: 1px solid var(--verde-pastel);    /* Borda sutil */
+    border-radius: 12px;    /* Bordas mais arredondadas */
+    background-color: #fcfcfc;    /* Fundo quase branco para os cards */
+    padding: 25px;
+    text-align: center;
+    width: calc(33.33% - 20px);    /* 3 cards por linha com espaçamento */
+    min-width: 280px;    /* Largura mínima para evitar que fiquem muito pequenos */
+    box-shadow: 0 5px 15px var(--sombra-leve);    /* Sombra para os cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;    /* Transição para hover */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;    /* Distribui o conteúdo verticalmente */
+}
+
+.oficina:hover,.equipes:hover {
+    transform: translateY(-8px);    /* Efeito de levantar no hover */
+    box-shadow: 0 10px 25px var(--sombra-media);    /* Sombra mais pronunciada no hover */
+}
+
+.oficina img,.equipes img {
+    width: 100%;
+    max-height: 250px;    /* Altura máxima para imagens */
+    object-fit: cover;    /* Garante que a imagem cubra o espaço sem distorcer */
+    border-radius: 8px;    /* Bordas arredondadas para as imagens nos cards */
+    margin-bottom: 15px;
+}
+
+.oficina h3,.equipes h3 {
+    font-size: 1.8em;
+    color: var(--roxo-escuro);
+    margin-bottom: 10px;
+}
+
+.oficina span {
+    font-family: var(--font-body);    /* Ajustado para font-body */
+    font-style: italic;
+    color: var(--verde-petroleo);
+    display: block;    /* Garante que o span ocupe a linha toda */
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+
+.oficina p,.equipes p {
+    font-family: var(--font-body);
+    font-size: 0.95em;
+    color: #666;
+    flex-grow: 1;    /* Permite que o parágrafo cresça e empurre o botão para baixo */
+    margin-bottom: 20px;
+}
+
+.equipes a {
+    text-decoration: none;
+    color: var(--roxo-escuro);
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;    /* Permite padding e margin */
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.equipes a:hover {
+    color: white;
+    background-color: var(--vermelho-vibrante);
+}
+
+.equipes .fa-brands {
+    /* Estiliza os ícones das redes sociais */
+    font-size: 24px;
+    color: var(--roxo-escuro);
+    margin: 0 10px 10px;
+    transition: color 0.3s ease;
+}
+
+.equipes .fa-brands:hover {
+    color: var(--vermelho-vibrante);
+}
+
+/* Seção IFizinha */
+
+.ifizinha a {
+    text-decoration: none;
+    color: var(--roxo-escuro);
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;    /* Permite padding e margin */
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    
+   
+}
+
+.ifizinha svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.ifizinha {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 40px;
+    background-color: var(--verde-claro);
+    color: white;
+    text-align: left;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--sombra-leve);
+    margin-bottom: 30px;
+}
+
+.ifizinha-cards {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.ifizinha-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.ifizinha h2 {
+    font-size: 2.5em;
+    color: white;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px var(--sombra-media);
+}
+
+.ifizinha-texto h3 {
+    font-size: 1.8em;
+    color: var(--roxo-escuro);    /* Cor do título interno para contraste */
+    margin-bottom: 10px;
+}
+
+.ifizinha-texto p {
+    font-size: 1.1em;
+    color: #f0f0f0;    /* Cor de texto mais clara para fundo verde */
+}
+
+.ifizinha-imagem img {
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px var(--sombra-media);
+}
+
+
+/* Seção Fale Conosco */
+.contato {
+    background-color: var(--cinza-claro);    /* Fundo cinza claro para a seção de contato */
+    display: flex;
+    justify-content: center;
+    align-items: center;    /* Centraliza verticalmente o formulário */
+    padding: 60px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--sombra-leve);
+    margin-bottom: 30px;
+}
+
+.fale-conosco {
+    width: 60%;    /* Largura ajustada para o formulário */
+    max-width: 600px;    /* Largura máxima */
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--sombra-leve);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input,form textarea {
+    margin-bottom: 15px;
+    padding: 12px 15px;    /* Padding ajustado */
+    border: 1px solid #ddd;
+    border-radius: 8px;    /* Bordas mais arredondadas */
+    font-size: 16px;
+    font-family: var(--font-body);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,form textarea:focus {
+    outline: none;
+    border-color: var(--verde-petroleo);    /* Borda colorida no foco */
+    box-shadow: 0 0 0 3px rgba(14, 124, 123, 0.2);    /* Sombra suave no foco */
+}
+
+form textarea {
+    resize: vertical;    /* Permite redimensionamento vertical */
+    min-height: 120px;    /* Altura mínima para textarea */
+}
+
+/* Footer (Rodapé) */
+footer {
+    background-color: var(--roxo-escuro);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;    /* Espaçamento superior */
+    border-radius: 10px;
+    box-shadow: 0 -2px 10px var(--sombra-media);
+    font-size: 0.9em;
+}
+
+/* ============================ */
+/* Responsividade - Media Queries */
+/* ============================ */
+
+/* Telas menores que 1024px (Tablets e Laptops menores) */
+@media (max-width: 1024px) {
+    body {
+        width: 95%;
+        /* Aumenta a largura em telas menores */
+    }
+
+    header {
+        padding: 0 20px;
+        height: 90px;
+    }
+
+    nav a {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+
+    .topo {
+        flex-direction: column-reverse;
+        /* Imagem acima do texto no topo */
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .topo-texto {
+        padding-right: 0;
+        margin-top: 30px;
+    }
+
+    .topo-texto h1 {
+        font-size: 2.5em;
+    }
+
+    .topo-texto p {
+        font-size: 1.1em;
+    }
+
+    .topo-imagem img {
+        max-width: 350px;
+    }
+
+    .sobre {
+        flex-direction: column;
+        /* Coluna em telas menores */
+        text-align: center;
+    }
+
+    .sobre-conteudo {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .sobre img {
+        max-width: 350px;
+    }
+
+    .oficinas-cards,
+    .equipe-cards {
+        flex-direction: column;
+        /* Cards em coluna em telas menores */
+        align-items: center;
+        /* Centraliza os cards */
+        padding: 30px 20px;
+    }
+
+    .oficina,
+    .equipes {
+        width: 90%;
+        /* Ocupa quase toda a largura disponível */
+        max-width: 400px;
+        /* Limita a largura em telas muito grandes para não esticar */
+        margin-bottom: 20px;
+        /* Espaçamento entre os cards */
+    }
+
+    .ifizinha {
+        flex-direction: column;
+        /* Coluna em telas menores */
+        text-align: center;
+    }
+
+    .ifizinha-cards {
+        /* ajustado para iFizinha-conteudo */
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .ifizinha-imagem img {
+        max-width: 300px;
+    }
+
+    .fale-conosco {
+        width: 80%;
+        /* Formulário ocupa mais espaço */
+    }
+}
+
+/* Telas menores que 768px (Smartphones) */
+@media (max-width: 768px) {
+    header {
+        height: 70px;
+        flex-direction: column;
+        /* Empilha logo e nav */
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .logo img {
+        width: 150px;
+        margin-bottom: 5px;
+    }
+
+    nav {
+        margin-top: 5px;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 5px 8px;
+    }
+
+    .topo-texto h1 {
+        font-size: 2em;
+    }
+
+    .topo-texto p {
+        font-size: 1em;
+    }
+
+    .topo-imagem img {
+        max-width: 280px;
+    }
+
+    section {
+        padding: 40px 20px;
+    }
+
+    .sobre h2,
+    .ifizinha h2,
+    .oficina-topo h2,
+    .equipe-topo h2,
+    .fale-conosco-topo h2 {
+        font-size: 2em;
+    }
+
+    .sobre img,
+    .ifizinha-imagem img {
+        max-width: 280px;
+    }
+
+    .oficina,
+    .equipes {
+        width: 100%;
+        /* Cards ocupam 100% da largura */
+    }
+
+    .fale-conosco {
+        width: 95%;
+        padding: 20px;
+    }
+
+    form input,
+    form textarea,
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
