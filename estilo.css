@@ -46,6 +46,7 @@ h1,h2,h3,h4,h5,h6 {
 p,span,a,li {
     font-family: var(--font-body);
     line-height: 1.6;    /* Melhorar a legibilidade do texto */
+    text-decoration: none;
 }
 
 /* Header (Cabeçalho) */
@@ -91,8 +92,8 @@ nav a:hover {
 
 /* Botões Globais */
 button {
-    background-color: var(--roxo-escuro);
-    color: #FFFFFF;
+    background-color: var(--verde-petroleo);
+    color: var(--verde-pastel);
     height: 50px;
     padding: 0 30px;    /* Padding ajustado para flexibilidade de largura */
     border: none;
@@ -103,6 +104,12 @@ button {
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;    /* Transições suaves */
     box-shadow: 0 4px 8px var(--sombra-leve);
     margin-top: 20px;    /* Espaçamento acima dos botões */
+    display: flex;
+    align-items: center;
+    justify-content: center;    /* Centraliza o texto dentro do botão */
+}
+.largura100{
+    width: 100%;    /* Botão ocupa toda a largura disponível */
 }
 
 button:hover {
@@ -300,8 +307,8 @@ section {
 .equipes a {
     text-decoration: none;
     display: inline-block;    /* Permite padding e margin */
-    background-color: var(--roxo-escuro);
-    color: #FFFFFF;
+    background-color: var(--verde-petroleo);
+    color: var(--verde-pastel);
     height: 50px;
     padding: 0 30px;    /* Padding ajustado para flexibilidade de largura */
     border: none;
@@ -313,6 +320,9 @@ section {
     box-shadow: 0 4px 8px var(--sombra-leve);
     margin-top: 20px;    /* Espaçamento acima dos botões */
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;    /* Centraliza o texto dentro do botão */
 }
 
 
@@ -326,9 +336,10 @@ section {
 .equipes .fa-brands {
     /* Estiliza os ícones das redes sociais */
     font-size: 24px;
-    color: var(--roxo-escuro);
-    margin: 0 10px 10px;
+    color: var(--verde-pastel);
+    margin-right: 10px;
     transition: color 0.3s ease;
+    
 }
 
 .equipes .fa-brands:hover {
