@@ -275,11 +275,12 @@ section {
 
 .oficina img,.equipes img {
     width: 100%;
-    max-height: 250px;    /* Altura máxima para imagens */
+    max-height: 350px;    /* Altura máxima para imagens */
     object-fit: cover;    /* Garante que a imagem cubra o espaço sem distorcer */
     border-radius: 8px;    /* Bordas arredondadas para as imagens nos cards */
     margin-bottom: 15px;
 }
+
 
 .oficina h3,.equipes h3 {
     font-size: 1.8em;
